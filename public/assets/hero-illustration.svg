@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+  <rect width="100%" height="100%" fill="#f8f9fa" />
+  <g transform="translate(80,60)">
+    <rect width="480" height="360" rx="24" fill="#fff" stroke="#e9ecef" />
+    <text x="240" y="180" text-anchor="middle" fill="#6c757d" font-size="24">Ilustración de banca</text>
+  </g>
+</svg>

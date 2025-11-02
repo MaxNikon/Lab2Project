@@ -1,0 +1,64 @@
+/* Estilos personalizados: colores y tipografía según requerimiento */
+:root{
+  --primary: #085f63; /* Primary */
+  --secondary: #49beb7; /* Secondary / Accent */
+  --accent: #49beb7; /* Accent (same as secondary) */
+  --background: #FFFFFF; /* Background */
+  --text: #0b1a1a; /* texto oscuro por defecto */
+}
+
+body{
+  font-family: 'Montserrat Alternates', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Layout: asegurar que el footer quede siempre al final de la página */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; }
+#root { flex: 1 0 auto; display: flex; flex-direction: column; min-height: 100vh; }
+#root main { flex: 1 0 auto; }
+
+/* Header */
+header .navbar-brand strong{font-size:1.05rem; color:var(--primary)}
+
+.hero-illustration{max-width:420px}
+
+/* Ajustes para la tarjeta */
+.card-title{font-weight:600}
+
+/* Logo sizing */
+.navbar-brand .logo{
+  height:48px;
+  width:auto;
+  display:block;
+}
+
+@media (max-width: 767px){
+  .navbar-brand .logo{
+    height:36px;
+  }
+}
+
+/* Sobrescribir colores de Bootstrap primarios para que usen la paleta proporcionada */
+.btn-primary{
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+}
+.btn-primary:hover, .btn-primary:focus{
+  background-color: color-mix(in srgb, var(--primary) 80%, black 20%) !important;
+  border-color: color-mix(in srgb, var(--primary) 80%, black 20%) !important;
+}
+.bg-primary{background-color:var(--primary) !important; color:#fff}
+.text-primary{color:var(--primary) !important}
+
+a{color:var(--primary)}
+a:hover{color:var(--secondary)}
+
+/* Pequeños espacios */
+section{padding-top: 2rem; padding-bottom:2rem}
+
+@media (max-width: 767px){
+  .container{padding-left:1rem;padding-right:1rem}
+}

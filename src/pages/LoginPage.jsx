@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function LoginPage(){
   // Fields in code are English (email, password); labels/messages in Spanish
@@ -27,7 +28,8 @@ export default function LoginPage(){
       const payload = { email: form.email, password: form.password }
       // Aquí iría la llamada al backend (login)
       console.log('Login payload:', payload)
-      setSubmitted(true)
+      // Simular login exitoso -> redirigir al dashboard
+      navigate('/dashboard')
     }
   }
 

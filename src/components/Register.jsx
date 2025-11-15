@@ -10,7 +10,7 @@ export default function Register(){
 
   function handleSubmit(e){
     e.preventDefault()
-    // Aquí iría la llamada a la API; por ahora sólo mostramos confirmación
+    
     console.log('Registro:', form)
     setSubmitted(true)
   }

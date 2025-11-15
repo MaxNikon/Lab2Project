@@ -1,7 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Dashboard(){
-  // Pantalla de inicio simulada tras login
+  const navigate = useNavigate()
   return (
     <main className="py-5">
       <div className="container">
@@ -17,7 +18,7 @@ export default function Dashboard(){
                   <p className="text-muted">Cuenta corriente: $ 1,200.00 · Ahorros: $ 3,120.50</p>
                 </div>
                 <div className="d-flex gap-2">
-                  <button className="btn btn-primary">Transferir</button>
+                  <button className="btn btn-primary" onClick={() => navigate('/transfer')}>Transferir</button>
                   <button className="btn btn-outline-secondary">Pagar</button>
                 </div>
               </div>
@@ -68,7 +69,7 @@ export default function Dashboard(){
                 <h6 className="card-title">Accesos rápidos</h6>
                 <div className="list-group list-group-flush">
                   <button className="list-group-item list-group-item-action">Cuentas</button>
-                  <button className="list-group-item list-group-item-action">Transferencias</button>
+                  <button className="list-group-item list-group-item-action" onClick={() => navigate('/transfer')}>Transferencias</button>
                   <button className="list-group-item list-group-item-action">Pagos</button>
                   <button className="list-group-item list-group-item-action">Tarjetas</button>
                   <button className="list-group-item list-group-item-action">Movimientos</button>

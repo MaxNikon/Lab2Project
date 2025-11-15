@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 export default function RegisterPage(){
-  // Form field names in code are English (per request) while labels/messages remain Spanish
   const [form, setForm] = useState({ firstName: '', lastName: '', idNumber: '', birthDate: '', phone: '', email: '', password: '', confirmPassword: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
@@ -30,10 +29,8 @@ export default function RegisterPage(){
     const v = validate(form)
     setErrors(v)
     if(Object.keys(v).length === 0){
-      // preparar payload para backend: enviar solo la contraseña (no el campo de confirmación)
       const payload = { ...form }
       delete payload.confirmPassword
-      // aquí iría la llamada a la API con `payload`
       console.log('Payload a enviar:', payload)
       setSubmitted(true)
     }

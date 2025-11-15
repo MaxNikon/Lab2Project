@@ -14,7 +14,7 @@ export default function Header() {
         <div className="collapse navbar-collapse" id="navMenu">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item"><Link className="nav-link" to="/register">Regístrate</Link></li>
-            <li className="nav-item"><Link className="nav-link btn btn-primary ms-2" to="#">Acceso</Link></li>
+            <li className="nav-item"><Link className="nav-link btn btn-primary ms-2" to="/login">Acceso</Link></li>
           </ul>
         </div>
       </nav>

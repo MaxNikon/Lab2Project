@@ -69,3 +69,24 @@ section{padding-top: 2rem; padding-bottom:2rem}
 @media (max-width: 767px){
   .container{padding-left:1rem;padding-right:1rem}
 }
+
+/* Sidebar layout */
+/* Sidebar removed - related styles deleted */
+
+/* Left navigation (in-content, left column) */
+.page-with-leftnav{ display:flex; align-items:flex-start; gap:1rem; padding:1rem 0; }
+.left-nav{ width:240px; min-width:200px; max-width:280px; display:flex; flex-direction:column; height: calc(100vh - 112px); /* header + footer approx */ }
+.left-nav .nav-link{ color:var(--text); padding: .4rem 0 }
+.left-nav .nav-link:hover{ color:var(--primary) }
+.content-area{ flex:1 1 auto; display:flex; flex-direction:column }
+
+@media (max-width: 991px){
+  .page-with-leftnav{ flex-direction:column }
+  .left-nav{ display:none }
+}
+/* Ensure the main content pushes footer to bottom when content is short */
+.app-content{ flex: 1 0 auto; display:flex; flex-direction:column }
+.app-content main{ flex: 1 0 auto }
+
+/* Keep footer at the bottom */
+footer{ margin-top: auto }

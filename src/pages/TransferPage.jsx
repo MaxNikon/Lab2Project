@@ -95,7 +95,10 @@ export default function TransferPage(){
                 </div>
 
                 <div className="col-12">
-                  <button className="btn btn-primary" disabled={loading}>{loading ? 'Enviando...' : 'Enviar transferencia'}</button>
+                  <div className="d-flex gap-2">
+                    <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Enviando...' : 'Enviar transferencia'}</button>
+                    <button type="button" className="btn btn-outline-secondary" onClick={() => navigate('/dashboard')}>Volver al dashboard</button>
+                  </div>
                 </div>
               </form>
             </div>

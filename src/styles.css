@@ -1,0 +1,92 @@
+:root{
+  --primary: #085f63;
+  --secondary: #49beb7;
+  --accent: #49beb7;
+  --background: #FFFFFF;
+  --text: #0b1a1a;
+}
+
+body{
+  font-family: 'Montserrat Alternates', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--background);
+  color: var(--text);
+}
+
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; }
+#root { flex: 1 0 auto; display: flex; flex-direction: column; min-height: 100vh; }
+#root main { flex: 1 0 auto; }
+
+header .navbar-brand strong{font-size:1.05rem; color:var(--primary)}
+
+.card-title{font-weight:600}
+
+.navbar-brand .logo{
+  height:48px;
+  width:auto;
+  display:block;
+}
+
+.btn-primary{
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+}
+@media (max-width: 767px){
+  .navbar-brand .logo{
+    height:36px;
+  }
+}
+
+.hero-illustration{max-width:420px}
+
+.navbar-brand .logo{
+  height:48px;
+  width:auto;
+  display:block;
+}
+
+.card-title{font-weight:600}
+
+.btn-primary{
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover, .btn-primary:focus{
+  background-color: color-mix(in srgb, var(--primary) 80%, black 20%) !important;
+  border-color: color-mix(in srgb, var(--primary) 80%, black 20%) !important;
+}
+.bg-primary{background-color:var(--primary) !important; color:#fff}
+.text-primary{color:var(--primary) !important}
+
+a{color:var(--primary)}
+a:hover{color:var(--secondary)}
+
+section{padding-top: 2rem; padding-bottom:2rem}
+
+@media (max-width: 767px){
+  .container{padding-left:1rem;padding-right:1rem}
+}
+
+/* Sidebar layout */
+/* Sidebar removed - related styles deleted */
+
+/* Left navigation (in-content, left column) */
+.page-with-leftnav{ display:flex; align-items:flex-start; gap:1rem; padding:1rem 0; }
+.left-nav{ width:240px; min-width:200px; max-width:280px; display:flex; flex-direction:column; height: calc(100vh - 112px); /* header + footer approx */ }
+.left-nav .nav-link{ color:var(--text); padding: .4rem 0 }
+.left-nav .nav-link:hover{ color:var(--primary) }
+.content-area{ flex:1 1 auto; display:flex; flex-direction:column }
+
+@media (max-width: 991px){
+  .page-with-leftnav{ flex-direction:column }
+  .left-nav{ display:none }
+}
+/* Ensure the main content pushes footer to bottom when content is short */
+.app-content{ flex: 1 0 auto; display:flex; flex-direction:column }
+.app-content main{ flex: 1 0 auto }
+
+/* Keep footer at the bottom */
+footer{ margin-top: auto }

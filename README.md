@@ -36,7 +36,7 @@ Cómo ejecutar (Windows PowerShell):
 1. Abrir PowerShell y ubicarse en la carpeta del proyecto:
 
 ```powershell
-cd "C:\Users\Mijha\OneDrive\Escritorio\uni\lab 2\Lab2Project"
+cd "C:\Users\***\Lab2Project"
 ```
 
 2. Instalar dependencias:
@@ -57,11 +57,6 @@ Notas:
 - El proyecto usa Vite como servidor de desarrollo. Si no tienes Node.js/NPM instalado, instálalo desde https://nodejs.org/
 - Bootstrap está incluido mediante CDN en `index.html`. Si prefieres instalarlo localmente, añade la dependencia y importa en `src/main.jsx`.
 - Archivos a editar: `src/components/*` y `src/styles.css` para personalizar la landing.
-
-Si quieres, puedo:
-- Añadir formularios y validación para apertura de cuenta.
-- Integrar autenticación simulada o mock API.
-- Convertir el proyecto para desplegar en GitHub Pages o Netlify.
 
 ---
 # Lab2Project

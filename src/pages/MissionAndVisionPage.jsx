@@ -19,13 +19,6 @@ export default function MissionAndVisionPage() {
                         </div>
                     </div>
                 </div>
-                <div className='row'>
-                    <div className='col-12'>
-                        <div className='h2 mt-3 text-center text-black'>Servicios Ofrecidos</div>
-                    </div>
-                    <div className='col'></div>
-
-                </div>
             </div>
         </main>
     )

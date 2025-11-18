@@ -11,6 +11,7 @@ import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import TransferPage from './pages/TransferPage'
+import MissionAndVisionPage from './pages/MissionAndVisionPage'
 
 function AppRoutes(){
   return (
@@ -27,6 +28,7 @@ function AppRoutes(){
       <Route path="/login" element={<LoginPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/transfer" element={<TransferPage />} />
+      <Route path='/info' element={<MissionAndVisionPage />} />
     </Routes>
   )
 }

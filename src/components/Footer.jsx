@@ -24,7 +24,8 @@ export default function Footer(){
             <div>Email: <a className="text-white" href="mailto:info@bancouniversitario.com.ve">info@bancouniversitario.com.ve</a></div>
             <div className="mt-2">
               <a className="text-white me-3" href="#">Términos</a>
-              <a className="text-white" href="#">Privacidad</a>
+              <a className="text-white me-3" href="#">Privacidad</a>
+              <a className='text-white' href='/info'>Sobre Nosotros</a>
             </div>
           </div>
         </div>

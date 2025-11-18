@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import Services from './components/Services'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
@@ -18,6 +19,7 @@ function AppRoutes(){
         <main>
           <Hero />
           <Features />
+          <Services />
           <CTA />
         </main>
       } />

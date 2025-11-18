@@ -7,6 +7,9 @@ export default function Footer(){
         <div className="row">
           <div className="col-md-4 mb-3 mb-md-0">
             <div>© {new Date().getFullYear()} BancaU — Universidad</div>
+            <div><i className="fa-brands fa-facebook"/><a className="text-white" href="">@bancouniversitariove</a></div>
+            <div><i className="fa-brands fa-instagram"/><a className="text-white" href="">@bancouniversitariove</a></div>
+            <div><i className="fa-brands fa-x-twitter"/><a className="text-white" href="">@bancouniversitariove</a></div>
           </div>
           <div className="col-md-4 mb-3 mb-md-0">
             <h6 className="mb-2">Contacto</h6>

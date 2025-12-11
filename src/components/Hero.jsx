@@ -13,7 +13,9 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex-fill text-center">
-          <img src="/assets/hero-illustration.jpg" alt="Ilustración" className="img-fluid" style={{maxWidth: 420, filter: 'blur(0.06rem)'}} />
+          <div style={{maxWidth: '820px'}} className="mx-auto">
+            <img src="/assets/hero-illustration.jpg" alt="Ilustración" className="img-fluid" style={{filter: 'blur(0.06rem)'}} />
+          </div>
         </div>
       </div>
     </section>

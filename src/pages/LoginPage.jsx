@@ -31,7 +31,7 @@ export default function LoginPage(){
       setLoading(true);
       try {
         // 1. Llamada al endpoint de login
-        const response = await fetch(`http://localhost:3000/v1/public/client/user/login`, {
+        const response = await fetch(`/v1/public/client/user/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -82,6 +82,11 @@ export default function LoginPage(){
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <form onSubmit={handleSubmit} className="row g-3" noValidate>
+                {apiError && (
+                  <div className="col-12">
+                    <div className="alert alert-danger">{apiError}</div>
+                  </div>
+                )}
                 <div className="col-12">
                   <label className="form-label">Correo electrónico</label>
                   <input name="email" type="email" value={form.email} onChange={handleChange} required className={`form-control ${errors.email ? 'is-invalid' : ''}`} />

@@ -2,14 +2,17 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function LoginPage(){
+  const navigate = useNavigate()
   const [form, setForm] = useState({ email: '', password: '' })
   const [errors, setErrors] = useState({})
+  const [apiError, setApiError] = useState('')
+  const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
   function validate(values){
     const errs = {}
     if(!values.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) errs.email = 'Correo inválido.'
-    if(!values.password || values.password.length < 6) errs.password = 'La contraseña debe tener al menos 6 caracteres.'
+    if(!values.password || values.password.length < 8) errs.password = 'La contraseña debe tener al menos 8 caracteres.'
     return errs
   }
 
@@ -17,16 +20,54 @@ export default function LoginPage(){
     const { name, value } = e.target
     setForm(prev => ({ ...prev, [name]: value }))
     setErrors(prev => ({ ...prev, [name]: undefined }))
+    setApiError('');
   }
 
-  function handleSubmit(e){
+  async function handleSubmit(e){
     e.preventDefault()
     const v = validate(form)
     setErrors(v)
     if(Object.keys(v).length === 0){
-  const payload = { email: form.email, password: form.password }
-  console.log('Login payload:', payload)
-  navigate('/dashboard')
+      setLoading(true);
+      try {
+        // 1. Llamada al endpoint de login
+        const response = await fetch(`http://localhost:3000/v1/public/client/user/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept-Language': 'es' 
+            },
+            body: JSON.stringify({
+                email: form.email.trim(),
+                password: form.password
+            })
+        });
+
+        const data = await response.json();
+
+        // 2. Verificamos si la respuesta fue exitosa (Status 200-299)
+        if (response.ok) {
+            console.log('Login exitoso:', data);
+            
+            // 3. Guardamos el token y la info del usuario
+            if (data.data && data.data.jwt) {
+                localStorage.setItem('token', data.data.jwt);
+                localStorage.setItem('user', JSON.stringify(data.data));
+            }
+
+            // 4. Redireccionamos al Dashboard
+            navigate('/dashboard');
+        } else {
+            // Manejo de errores (ej. credenciales incorrectas)
+            setApiError(data.message || 'Error al iniciar sesión');
+        }
+
+      } catch (error) {
+        console.error('Error de red:', error);
+        setApiError('Error de conexión con el servidor.');
+      } finally {
+        setLoading(false);
+      }
     }
   }
 
@@ -36,7 +77,7 @@ export default function LoginPage(){
         <h2 className="mb-3">Acceso</h2>
 
         {submitted ? (
-          <div className="alert alert-success">Has iniciado sesión (simulado). Redirigiendo...</div>
+          <div className="alert alert-success">Has iniciado sesión. Redirigiendo...</div>
         ) : (
           <div className="row justify-content-center">
             <div className="col-lg-8">

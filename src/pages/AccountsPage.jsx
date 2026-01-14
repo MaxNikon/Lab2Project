@@ -122,7 +122,7 @@ export default function AccountsPage() {
                     </div>
                   </div>
                   <div className="card-footer bg-transparent border-top-0 pb-3">
-                     <button className="btn btn-outline-primary w-100" onClick={() => navigate('/dashboard')}>
+                     <button className="btn btn-outline-primary w-100" onClick={() => navigate('/movements')}>
                        Ver movimientos
                      </button>
                   </div>

@@ -3,11 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function LeftNav(){
   const navigate = useNavigate()
-  const hasToken = !!localStorage.getItem('authToken')
+  const hasToken = !!localStorage.getItem('token')
 
   function handleLogout(){
-    localStorage.removeItem('authToken')
-    navigate('/')
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    navigate('/login')
   }
 
   return (
@@ -21,8 +22,7 @@ export default function LeftNav(){
         <li className="nav-item"><Link className="nav-link" to="/dashboard">Dashboard</Link></li>
         <li className="nav-item"><Link className="nav-link" to="/transfer">Transferencias</Link></li>
         <li className="nav-item"><Link className="nav-link" to="/accounts">Cuentas</Link></li>
-        <li className="nav-item"><Link className="nav-link" to="/payments">Pagos</Link></li>
-        <li className="nav-item"><Link className="nav-link" to="/transactions">Movimientos</Link></li>
+        <li className="nav-item"><Link className="nav-link" to="/movements">Movimientos</Link></li>
       </ul>
 
       {hasToken && (

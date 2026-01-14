@@ -14,6 +14,7 @@ import Dashboard from './pages/Dashboard'
 import TransferPage from './pages/TransferPage'
 import MissionAndVisionPage from './pages/MissionAndVisionPage'
 import AccountsPage from './pages/AccountsPage'
+import MovementsPage from './pages/MovementsPage'
 
 function AppRoutes(){
   return (
@@ -31,6 +32,7 @@ function AppRoutes(){
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/transfer" element={<TransferPage />} />
       <Route path="/accounts" element={<AccountsPage />} />
+      <Route path="/movements" element={<MovementsPage />} />
       <Route path='/info' element={<MissionAndVisionPage />} />
     </Routes>
   )

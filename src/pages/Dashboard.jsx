@@ -26,7 +26,7 @@ export default function Dashboard(){
         return
       }
 
-      const response = await fetch(`/v1/client/movement?page=1&page_size=10&`, {
+      const response = await fetch(`/v1/client/movement?page=1&page_size=5&`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -125,7 +125,7 @@ export default function Dashboard(){
               <div className="card-body">
                 <h6 className="card-title">Accesos rápidos</h6>
                 <div className="list-group list-group-flush">
-                  <button className="list-group-item list-group-item-action">Cuentas</button>
+                  <button className="list-group-item list-group-item-action" onClick={() => navigate('/accounts')}>Cuentas</button>
                   <button className="list-group-item list-group-item-action" onClick={() => navigate('/transfer')}>Transferencias</button>
                   <button className="list-group-item list-group-item-action">Pagos</button>
                   <button className="list-group-item list-group-item-action">Tarjetas</button>

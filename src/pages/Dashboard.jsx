@@ -9,7 +9,6 @@ export default function Dashboard(){
   const [user, setUser] = useState(null)
 
   React.useEffect(() => {
-    // Cargar usuario del localStorage
     const storedUser = localStorage.getItem('user')
     if(storedUser) {
       setUser(JSON.parse(storedUser))
@@ -26,7 +25,7 @@ export default function Dashboard(){
         return
       }
 
-      const response = await fetch(`/v1/client/movement?page=1&page_size=10&`, {
+      const response = await fetch(`/v1/client/movement?page=1&page_size=5&`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -73,7 +72,7 @@ export default function Dashboard(){
                 </div>
                 <div className="d-flex gap-2">
                   <button className="btn btn-primary" onClick={() => navigate('/transfer')}>Transferir</button>
-                  <button className="btn btn-outline-secondary">Pagar</button>
+
                 </div>
               </div>
             </div>
@@ -125,11 +124,11 @@ export default function Dashboard(){
               <div className="card-body">
                 <h6 className="card-title">Accesos rápidos</h6>
                 <div className="list-group list-group-flush">
-                  <button className="list-group-item list-group-item-action">Cuentas</button>
+                  <button className="list-group-item list-group-item-action" onClick={() => navigate('/accounts')}>Cuentas</button>
                   <button className="list-group-item list-group-item-action" onClick={() => navigate('/transfer')}>Transferencias</button>
-                  <button className="list-group-item list-group-item-action">Pagos</button>
+
                   <button className="list-group-item list-group-item-action">Tarjetas</button>
-                  <button className="list-group-item list-group-item-action">Movimientos</button>
+                  <button className="list-group-item list-group-item-action" onClick={() => navigate('/movements')}>Movimientos</button>
                 </div>
               </div>
             </div>

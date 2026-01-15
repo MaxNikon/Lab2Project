@@ -12,9 +12,10 @@ import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import TransferPage from './pages/TransferPage'
-import MissionAndVisionPage from './pages/MissionAndVisionPage'
+import InformationPage from './pages/InformationPage'
 import AccountsPage from './pages/AccountsPage'
 import MovementsPage from './pages/MovementsPage'
+
 
 function AppRoutes(){
   return (
@@ -31,9 +32,9 @@ function AppRoutes(){
       <Route path="/login" element={<LoginPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/transfer" element={<TransferPage />} />
+      <Route path='/info' element={<InformationPage />} />
       <Route path="/accounts" element={<AccountsPage />} />
       <Route path="/movements" element={<MovementsPage />} />
-      <Route path='/info' element={<MissionAndVisionPage />} />
     </Routes>
   )
 }

@@ -1,0 +1,38 @@
+import React from 'react'
+import ObjectiveCarousel from '../components/ObjectivesCarousel'
+
+export default function InformationPage() {
+    return (
+        <main className='bg-white text-black'>
+            <div className='py-5 container'>
+                <div className='text-center'>
+                    <h2 className='mb-3 bg-primary text-white p-2 d-inline-block rounded'>Informacion</h2>
+                </div>
+                <div className='row'>
+                    <div className='col'>
+                        <div className='h2 ms-5 me-3 text-start'>Mision</div>
+                        <div className='card d-none d-lg-block fs-5 p-3 ms-3 me-3 text-center'>
+                            Somos una confiable institución financiera comprometida con los estudiantes universitarios, brindando soluciones financieras ágiles y eficientes. Nuestra misión es facilitar la gestión de sus recursos y contribuir al crecimiento económico y personal de nuestros clientes.
+                        </div>
+                        <div className='card d-lg-none fs-6 p-3 ms-3 me-3 text-center'>
+                            Somos una confiable institución financiera comprometida con los estudiantes universitarios, brindando soluciones financieras ágiles y eficientes. Nuestra misión es facilitar la gestión de sus recursos y contribuir al crecimiento económico y personal de nuestros clientes.
+                        </div>
+                    </div>
+                    <div className='col'>
+                        <div className='h2 me-5 ms-3 text-end'>Vision</div>
+                        <div className='card d-none d-lg-block fs-5 p-3 me-3 text-center'>
+                            Queremos ser la principal opción financiera para estudiantes universitarios en el país. Deseamos ser reconocidos por nuestros servicios innovadores, la calidad de atención al cliente y nuestro compromiso con la educación y el desarrollo social.
+                        </div>
+                        <div className='card d-lg-none fs-6 p-3 me-3 text-center'>
+                            Queremos ser la principal opción financiera para estudiantes universitarios en el país. Deseamos ser reconocidos por nuestros servicios innovadores, la calidad de atención al cliente y nuestro compromiso con la educación y el desarrollo social.
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div className='text-center'>
+                    <h2 className='mb-3 bg-primary text-white p-2 d-inline-block rounded'>Objetivos</h2>
+                </div>
+                <ObjectiveCarousel />
+        </main>
+    )
+}

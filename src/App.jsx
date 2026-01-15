@@ -12,7 +12,7 @@ import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import TransferPage from './pages/TransferPage'
-import MissionAndVisionPage from './pages/MissionAndVisionPage'
+import InformationPage from './pages/InformationPage'
 
 function AppRoutes(){
   return (
@@ -29,7 +29,7 @@ function AppRoutes(){
       <Route path="/login" element={<LoginPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/transfer" element={<TransferPage />} />
-      <Route path='/info' element={<MissionAndVisionPage />} />
+      <Route path='/info' element={<InformationPage />} />
     </Routes>
   )
 }

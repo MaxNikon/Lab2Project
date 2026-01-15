@@ -38,8 +38,8 @@ export default function TransferPage(){
     setLoading(true)
     try{
       
-      const token = localStorage.getItem('authToken')
-      const res = await fetch('/api/transfers', {
+      const token = localStorage.getItem('token')
+      const res = await fetch('/v1/client/movement', {
         method: 'POST',
         headers: Object.assign({ 'Content-Type': 'application/json' }, token ? { Authorization: `Bearer ${token}` } : {}),
         body: JSON.stringify(payload)
@@ -68,7 +68,7 @@ export default function TransferPage(){
         <h2 className="mb-3">Realizar transferencia</h2>
 
         {submitted ? (
-          <div className="alert alert-success">Transferencia enviada correctamente. Redirigiendo al dashboard...</div>
+          <div className="alert alert-success">Transferencia enviada correctamente. Redirigiendo al inicio...</div>
         ) : (
           <div className="row justify-content-center">
             <div className="col-lg-6">
@@ -97,7 +97,7 @@ export default function TransferPage(){
                 <div className="col-12">
                   <div className="d-flex gap-2">
                     <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Enviando...' : 'Enviar transferencia'}</button>
-                    <button type="button" className="btn btn-outline-secondary" onClick={() => navigate('/dashboard')}>Volver al dashboard</button>
+                    <button type="button" className="btn btn-outline-secondary" onClick={() => navigate('/dashboard')}>Volver al inicio</button>
                   </div>
                 </div>
               </form>

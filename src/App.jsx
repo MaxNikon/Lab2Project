@@ -13,6 +13,9 @@ import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import TransferPage from './pages/TransferPage'
 import InformationPage from './pages/InformationPage'
+import AccountsPage from './pages/AccountsPage'
+import MovementsPage from './pages/MovementsPage'
+
 
 function AppRoutes(){
   return (
@@ -30,6 +33,8 @@ function AppRoutes(){
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/transfer" element={<TransferPage />} />
       <Route path='/info' element={<InformationPage />} />
+      <Route path="/accounts" element={<AccountsPage />} />
+      <Route path="/movements" element={<MovementsPage />} />
     </Routes>
   )
 }
@@ -49,7 +54,6 @@ function AppBody(){
   const publicPaths = ['/', '/register', '/login', '/info']
   const protectedRoute = !publicPaths.includes(location.pathname)
 
-  // If we're on a protected route, render a two-column layout with a left nav
   if(protectedRoute){
     return (
       <div className="page-with-leftnav">

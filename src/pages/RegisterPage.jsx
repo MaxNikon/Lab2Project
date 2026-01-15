@@ -16,7 +16,7 @@ export default function RegisterPage(){
   const [apiError, setApiError] = useState('');
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
   function validate(values){
@@ -66,7 +66,7 @@ export default function RegisterPage(){
           password: form.password
         };
 
-        const response = await fetch(`http://localhost:3000/v1/public/client/user/register`, {
+        const response = await fetch(`/v1/public/client/user/register`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -78,7 +78,8 @@ export default function RegisterPage(){
         const data = await response.json();
 
         if (response.ok) { // Status 201 Created
-          setSuccess(true);
+          setSubmitted(true);
+          setSuccessMessage(data.message);
           setTimeout(() => {
             navigate('/login');
           }, 2000);
@@ -103,7 +104,7 @@ export default function RegisterPage(){
         <h2 className="mb-3">Regístrate</h2>
 
         {submitted ? (
-          <div className="alert alert-success">Registro completado. Revisa tu correo para confirmar.</div>
+          <div className="alert alert-success">{successMessage || 'Registro completado. Revisa tu correo para confirmar.'}</div>
         ) : (
           <div className="row justify-content-center">
             <div className="col-lg-8">
